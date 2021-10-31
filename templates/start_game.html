@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boggle Game</title>
+    <link rel="stylesheet" href="/static/boggle.css">
+</head>
+<body>
+    <session id="boggle">
+    <!-- Step Two: Displaying the Board -->
+        <table class="board">
+            <tbody>
+                {% for row in board %}
+                <tr>
+                    {% for cell in row %}
+                    <td>
+                        {{ cell }}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <p>
+            Best Score: <b class="best-score">{{ highscore }}</b>
+            Games Played: <b class="games-played">{{ games_played }}</b>
+        </p>
+
+        <!-- Add details of score here -->
+        <p>
+            Score: <b class="score">0</b>
+        </p>
+        <p>
+            Time: <b class="countdown"></b> 
+        </p>
+
+        <form class="guess-form">
+            <input id="guess" type="text" placeholder="Submit a guess" name="guess">
+            <button id="submit-btn">Enter</button>
+        </form>
+
+        <!-- Display data -->
+        <div class="message">
+            <!-- Notify the user if the word is valid and exists on the board, if the word is invalid, or if the word does not exist at all -->
+        </div>
+        <ul class="words">
+            <!-- Add correct guess words here -->
+        </ul>
+        
+    </session>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+    <script src="/static/boggle.js"></script>
+    <script>
+        let game = new BoggleGame(60);
+    </script>
+</body>
+</html>

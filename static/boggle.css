@@ -1,0 +1,31 @@
+.board {
+    border: solid 1px black;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.board td {
+    text-align: center;
+    width: 2em;
+    height: 2em;
+}
+
+.message {
+    font-size: 1em;
+    padding: 1em;
+}
+
+.message.ok {
+    color: white;
+    background-color: green;
+}
+  
+.message.err {
+    color: white;
+    background-color: tomato;
+}
+
+.guess-form {
+    margin-bottom: 2em;
+}
